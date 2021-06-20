@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-  Dimensions,
+  Dimensions, Image,
   SafeAreaView,
   Text,
   TextInput,
@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
+import {Actions} from 'react-native-router-flux';
 
 export default class Record extends Component {
   WWidth = Dimensions.get('window').width;
@@ -17,10 +18,16 @@ export default class Record extends Component {
     return (
       <SafeAreaView
         style={{flex: 1, justifyContent: 'center', backgroundColor: '#0D0C40'}}>
+        <View>
+          <TouchableOpacity onPress={() => Actions.pop()}>
+            <View style={{width: 50, height: 50, margin: 20}}>
+              <Image source={require('../../source/images/backWhite.png')} />
+            </View>
+          </TouchableOpacity>
+        </View>
         <View
           style={{
             width: '100%',
-            height: '20%',
             justifyContent: 'center',
             margin: 20,
           }}>
@@ -41,7 +48,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'1'}
               editable={false}
             />
             <TextInput
@@ -51,7 +61,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'2'}
               editable={false}
             />
             <TextInput
@@ -61,7 +74,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'0'}
               editable={false}
             />
             <View style={{width: this.WWidth / this.dilimetr}}>
@@ -77,7 +93,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'0'}
               editable={false}
             />
             <TextInput
@@ -87,7 +106,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'8'}
               editable={false}
             />
             <TextInput
@@ -97,7 +119,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'0'}
               editable={false}
             />
             <View style={{width: this.WWidth / this.dilimetr}}>
@@ -116,7 +141,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'0'}
               editable={false}
             />
             <TextInput
@@ -126,7 +154,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'9'}
               editable={false}
             />
             <TextInput
@@ -136,7 +167,10 @@ export default class Record extends Component {
                 borderBottomColor: '#dddddd',
                 borderBottomWidth: 2,
                 margin: 3,
+                color: '#fff',
+                fontSize:32
               }}
+              value={'9'}
               editable={false}
             />
           </View>
@@ -274,7 +308,8 @@ export default class Record extends Component {
                 flex: 1,
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}>
+              }}
+            onPress={()=>Actions.pop()}>
               <Text style={{textAlign: 'center', fontSize: 22}}>DEL</Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -294,7 +329,8 @@ export default class Record extends Component {
                 flex: 1,
                 justifyContent: 'center',
                 alignItems: 'center',
-              }}>
+              }}
+              onPress={() => Actions.recordComment()}>
               <Text style={{textAlign: 'center', fontSize: 22}}>OK</Text>
             </TouchableOpacity>
           </View>

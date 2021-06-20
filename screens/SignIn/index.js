@@ -64,7 +64,7 @@ export class SignIn extends React.Component {
                 borderRadius: 10,
                 marginTop: 10,
               }}>
-              <Text style={{color: '#FFFFFF'}}>Войти с помощью МИАС</Text>
+              <Text style={{color: '#FFFFFF'}}>Войти с помощью ЕГАИС</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => Actions.profile()}
